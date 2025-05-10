@@ -10,9 +10,8 @@ import com.scp.demo.model.enums.TapType;
 public class Tap {
     @CsvBindByName(column = "ID")
     private int id;
-    // TODO think about timezone. 
     @CsvBindByName(column = "DateTimeUTC")
-    @CsvDate("yyyy-MM-dd'T'HH:mm:ss")
+    @CsvDate("dd-MM-yyyy HH:mm:ss")
     private LocalDateTime dateTimeUTC;
     @CsvBindByName(column = "TapType")
     private TapType tapType; // ON or OFF
