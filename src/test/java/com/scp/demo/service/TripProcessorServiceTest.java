@@ -35,7 +35,7 @@ class TripProcessorServiceTest {
             new Tap(1, LocalDateTime.parse("2023-01-22T13:00:00"), TapType.ON, "Stop1", "Company1", "Bus37", "5500005555555559"),
             new Tap(2, LocalDateTime.parse("2023-01-22T13:05:00"), TapType.OFF, "Stop2", "Company1", "Bus37", "5500005555555559")
         );
-
+        when(fareService.getFare("Stop1", "Stop2")).thenReturn(new BigDecimal("3.25"));
         List<Trip> trips = tripProcessorService.processTaps(taps);
 
         assertEquals(1, trips.size());
